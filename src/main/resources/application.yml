@@ -1,7 +1,7 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
 
@@ -9,6 +9,15 @@ spring:
     url: jdbc:mysql://localhost:3306/conexao_lemure?createDatabaseIfNotExist=true
     username: root
     password: 12345678
+
+  flyway:
+    locations:
+      filesystem: db/migration
+      validateMigrationNaming: true
+
+rsa:
+  private-key: 12345
+  public-key: 123
 
 server:
   port: 8091
